@@ -4,3 +4,4 @@
 
 * 01) Convert Binary Number in a Linked List to Integer
 * 02) Insertion Sort List
+* 03) Consecutive Characters
