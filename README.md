@@ -7,4 +7,6 @@
 * 03) Consecutive Characters
 * 04) < Minimum Height Trees >
 * 05) Minimum Cost to Move Chips to The Same Position
-* 06) Add Two Numbers II
+* 06) Find the Smallest Divisor Given a Threshold
+* 07) Add Two Numbers II
+* 08) Binary Tree Tilt
