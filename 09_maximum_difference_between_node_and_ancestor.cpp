@@ -67,3 +67,38 @@ public:
         return maxDiff;
     }
 };
+
+
+
+
+// Linear approach
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+private:
+    void findDiff(TreeNode* root, int currMin, int currMax, int& md) {
+        if (!root) return;
+        int diff = max(abs(root->val-currMax), abs(root->val-currMin));
+        md = max(diff, md);
+        currMin = min(root->val, currMin);
+        currMax = max(root->val, currMax);
+        findDiff(root->left, currMin, currMax, md);
+        findDiff(root->right, currMin, currMax, md);
+    }
+public:
+    int maxAncestorDiff(TreeNode* root) {
+        if (!root) return 0;
+        int maxDiff = 0;
+        findDiff(root, root->val, root->val, maxDiff);
+        return maxDiff;
+    }
+};
