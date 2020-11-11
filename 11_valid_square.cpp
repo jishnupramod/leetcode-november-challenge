@@ -50,3 +50,37 @@ public:
         return true;
     }
 };
+
+
+
+// No need of checking Pythagoras theorem since 4 sides equal and 2 diagonals equal ==> A valid Square
+class Solution {
+private:
+    int findlen(vector<int> p1, vector<int> p2) {
+        return (p2[1]-p1[1])*(p2[1]-p1[1]) + (p2[0]-p1[0])*(p2[0]-p1[0]);
+    }
+public:
+    bool validSquare(vector<int>& p1, vector<int>& p2, vector<int>& p3, vector<int>& p4) {
+        if (p1 == p2) return false;
+        // const double eps = 1e-5;
+        vector<vector<int>> pts = {p1, p2, p3, p4};
+        vector<double> sides;
+        /*
+        [p1, p2], [p1, p3], [p1, p4], [p2, p3], [p2, p4], [p3, p4]
+        */
+        for (int i=0; i<3; ++i) {
+            for (int j=i+1; j<4; ++j)
+                sides.push_back(findlen(pts[i], pts[j]));
+        }
+        sort(sides.begin(), sides.end());
+        for (double& side : sides)
+            side = sqrt(side);
+        // for (double i : sides)
+        //     cout << i << " ";
+        // cout << "\n";
+        for (int i=0; i<3; ++i)
+            if (sides[i] != sides[i+1]) return false;
+        if (sides[4] != sides[5]) return false;
+        return true;
+    }
+};
