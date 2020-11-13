@@ -14,3 +14,4 @@
 * 10) Flipping an Image
 * 11) Valid Square
 * 12) Permutations II
+* 13) Populating Next Right Pointers in Each Node
