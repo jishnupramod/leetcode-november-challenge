@@ -29,4 +29,6 @@
 * 25) < Smallest Integer Divisible by 3 >
 * 26) < Longest Substring with Atleast K Repeating Character >
 * 27) Partition Equal Subset Sum
+* 28) < Sliding Window Maximum >
+* 29) Jumg Game III
 *
